@@ -1,0 +1,73 @@
+<!--5b1g0012 250325course-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>homework</title>
+        <style>
+            #myid {
+                width: 50%;
+                background-color: antiquewhite;
+                padding: 30px;  /* 內邊距 */
+                margin-left: 0 ;
+                text-align: center;
+            }
+            h1 {
+                text-align: left;
+                font-weight: bold;
+                font-size: 30px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            label {
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            table, tr, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+            table {
+                text-align: center;
+                margin: auto;
+                table-layout: fixed;
+            }
+        </style>
+        <script>
+            function myFunction() {
+                var number = document.getElementById("numberInput");
+                var myid = document.getElementById("myid");
+                var n = parseInt(number.value);
+                var str = "";
+
+                if (isNaN(n) || n <= 0) {
+                    myid.innerHTML = "請輸入正整數！";
+                    return;
+                }
+
+                str += "<table>";
+                for (var i = 1; i <= n; i++) {
+                    str += "<tr>";
+                    for (var j = 1; j <= n; j++) {
+                        str += "<td>" + i + " × " + j + " = " + (i * j) + "</td>";
+                    }
+                    str += "</tr>";
+                }
+                str += "</table>";
+
+                myid.innerHTML = str;
+            }
+        </script>
+    </head>
+    <body>
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於我</a>
+        <a href="research.html">研究</a>
+        <a href="homework.html">作業</a>
+        <h1>N × N 乘法表</h1>
+        <label for="numberInput">輸入一個數值:</label>
+        <input type="number" id="numberInput" placeholder="輸入數值">
+        <input type="button" value="確定" title="確定" onclick="myFunction()">
+        <div id="myid"></div>
+    </body>
+</html>
